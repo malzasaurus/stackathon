@@ -1,16 +1,17 @@
 <div class='background'>
 	<div>
-		<h3>Player {{player+1}}</h3>
-		<h3 class='totals'>Current Total: {{currentTot}}</h3>
+		<h3>Player {{player.playerID}}</h3>
+		<h3 class='totals'>Current Total: {{player.currentTot}}</h3>
 	</div>
 
 	<table>
 		<tr>
-			<td ng-repeat='card in board'>
+			<td ng-repeat='card in player.board'>
+
 				<h6>{{card.bit}} bits</h6>
 				<div class='tiles'>{{card.position}}</div>
-				<button ng-click='increaseScore(card)'><span class='glyphicon glyphicon-plus-sign'></span></button>
-				<button ng-click='decreaseScore(card)'><span class='glyphicon glyphicon-minus-sign'></span></button>
+				<button ng-click='increaseScore(player, card)'><span class='glyphicon glyphicon-plus-sign'></span></button>
+				<button ng-click='decreaseScore(player, card)'><span class='glyphicon glyphicon-minus-sign'></span></button>
 			</td>
 		</tr>
 	</table>
