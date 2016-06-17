@@ -1,0 +1,47 @@
+#board {
+    table {
+      	width: 500px;
+      	margin: auto;
+      }
+      .background {
+    	// background-color: rgba(249, 242, 236, .75);
+    	background-color: #ECF8F7;
+    	opacity: .75;
+    	border-radius: .25em;
+    	margin: auto;
+    	height: auto;
+    	width: 800px;
+    	text-align: center;
+    	padding: 15px;
+    	border: 2px solid #051A32;
+      }
+      td {
+        width: auto;
+        padding: 5px;
+      }
+      .tiles {
+      	height: 100px;
+        width: 75px;
+      	border: black solid 2px;
+      	// background-color: #EC408A;
+      	// background-color: #FE6029; //bright orange
+      	background-color: #FCCF00;
+      	margin: 10%;
+      	text-align: center;
+      	font-size: 30px;
+      	color: white;
+      	padding: 25px 0;
+      	border-radius: .25em;
+      }
+      button {
+      	padding: 2px;
+      	border-radius: .25em;
+      	background-color: #FE6029; //bright orange
+      	width: 30px;
+
+      }
+      .totals {
+      	float:left;
+      	margin-right: 20px;
+      }
+  }

@@ -1,7 +1,10 @@
 navbar {
 
   display: block;
-  background: white;
+  // background-color: #81C8B8;
+  // background-color: #051A32;
+  background-color: #FCC3B8;
+  color: white;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 14px -3px black;
 
@@ -18,7 +21,7 @@ navbar {
   }
 
   a {
-    color: black;
+    color: #051A32;
     font-size: 16px;
   }
 
@@ -26,23 +29,27 @@ navbar {
     cursor: pointer;
     transition: color 0.2s;
     &.active {
-      color: darken(#f31214, 10%);
+      color: darken(#051A32, 10%);
     }
     &:hover {
       background: none;
-      color: #f31214;
+      color: #9DCCE8;
     }
     &:focus {
       background: none;
     }
   }
 
-  .login-button {
+  .navbar-button {
     float: right;
-    border: 1px solid black;
+    border: 2px solid white;
     margin-top: 10px;
     background: none;
+    width: 75px;
     outline: none !important;
+    text-align: center;
+    margin-right: 10px;
+    padding: 3px;
   }
 
   .welcome {
