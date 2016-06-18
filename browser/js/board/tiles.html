@@ -3,18 +3,15 @@
 		<h3>Player {{player.playerID}}</h3>
 		<h3 class='totals'>Current Total: {{player.currentTot}}</h3>
 	</div>
-
 	<table>
 		<tr>
 			<td ng-repeat='card in player.board'>
-
 				<h6>{{card.bit}} bits</h6>
-				<div class='tiles'>{{card.position}}</div>
-				<button ng-click='increaseScore(player, card)'><span class='glyphicon glyphicon-plus-sign'></span></button>
-				<button ng-click='decreaseScore(player, card)'><span class='glyphicon glyphicon-minus-sign'></span></button>
+				<div class='tiles' ng-class='{active: currentTile(player, card)}'>{{card.position}}</div>
 			</td>
 		</tr>
 	</table>
+	<h4>Left: 1      Toggle: 2      Right: 3</h4>
 </div>
 
-<!-- //make the buttons a toggle -->
+<!-- update directions on each board -->

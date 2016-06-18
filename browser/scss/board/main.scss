@@ -5,15 +5,32 @@
       }
       .background {
     	// background-color: rgba(249, 242, 236, .75);
+      float: left;
     	background-color: #ECF8F7;
     	opacity: .75;
     	border-radius: .25em;
     	margin: auto;
     	height: auto;
-    	width: 800px;
+    	width: auto;
     	text-align: center;
     	padding: 15px;
     	border: 2px solid #051A32;
+      }
+      #allboards {
+        margin: auto;
+        width: 76%;
+        clear: both;
+      }
+      .indBoard {
+        float: left;
+        margin: auto;
+        padding: 5px;
+      }
+      div.active {
+        border: 5px black solid;
+      }
+      h1, h3{
+        text-align: center;
       }
       td {
         width: auto;
@@ -38,10 +55,8 @@
       	border-radius: .25em;
       	background-color: #FE6029; //bright orange
       	width: 30px;
-
       }
       .totals {
-      	float:left;
       	margin-right: 20px;
       }
   }

@@ -1,9 +1,9 @@
 <section id="board">
-    	<h3 class='totals'>Target Number: {{targetNum | number}}</h3>
+	<div id='allboards'>
+    	<h1 class='totals'>Target Number: {{targetNum | number}}</h1>
     	<h3 ng-show='message'>{{message}}</h3>
-    	<table>
-    	    <td ng-repeat='player in players'>
+    	<div class='indBoard' ng-repeat='player in players'>
     			<tiles board='board'></tiles>  
-    		</td>	
-    	</table>
+    	</div>
+	</div>
 </section>

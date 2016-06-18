@@ -1,31 +1,73 @@
-app.controller('BoardCtrl', function($scope, $stateParams, players, randomNum){
+app.controller('BoardCtrl', function($window, $scope, $stateParams, players, randomNum){
 
-	// $scope.board = board; //created in the state resolve function
 	$scope.players = players; //created in the state resolve function
-	// $scope.currentTot = 0; //update this, need to add up value properties on the board
 	$scope.targetNum = randomNum; //determined in the state resolve function
-	$scope.message = "";
+	$scope.message;
+	$scope.currentTile = function(player, tile){
+	
+		return player.activeTile === tile.index;
+	};
 
-	$scope.increaseScore = function(player, tile){
-		console.log('increasing by ', tile.bit);
+	$scope.toggle = function(player, tile){
 		if(tile.position===0){
 			player.currentTot += tile.bit;
 			tile.position=1;
-		} 
-		if(player.currentTot===$scope.targetNum){
-			$scope.message = 'Player '+ player.playerID+' WON!!!';
-		}
-	};
-	$scope.decreaseScore = function(player, tile){
-		console.log('decreasing by ', tile.bit);
-		if(tile.position===1){
+		} else {
 			player.currentTot -= tile.bit;
 			tile.position=0;
-		} 
+		}
 		if(player.currentTot===$scope.targetNum){
 			$scope.message = 'Player '+ player.playerID+' WON!!!';
 		}
 	};
-//could make this a toggle function instead
+	$window.onkeydown = function(event) {
+    	// Player 1: 1	2	3
+   		// Player 2: 0	-	=
+   		// Player 3: z	x 	c
+   		// Player 4: ,	.	/
+   		var key = event.keyCode;
+   		var playerKeys = [
+   							[49,50,51],		//player 1
+							[48,189,187],	//player 2
+   							[90,88,67],		//player 3
+   							[188,190,191]	//player 4
+   						];
+
+   		var left = [49,48,90,188];
+   		var flip = [50,189,88,190];
+   		var right = [51,187,67,191];
+   		//determine player
+   		var currentPlayer;
+   		for (var i = 0; i < $scope.players.length; i++) {
+   			if(playerKeys[i].indexOf(key) !== -1){
+   				currentPlayer = i;
+   				break;
+   			}
+   		}
+   		var playerObj = $scope.players[currentPlayer];
+
+   		//determine command
+   		if(left.indexOf(key) !== -1){
+   			if(playerObj.activeTile+1 === playerObj.board.length){
+   				playerObj.activeTile=0;
+   			} else {
+   				playerObj.activeTile+=1;
+   			}
+   			$scope.$digest();
+   		}
+   		if(flip.indexOf(key) !== -1){
+   			var activeTileIndex = playerObj.board.length-playerObj.activeTile-1;
+   			$scope.toggle(playerObj, playerObj.board[activeTileIndex]);
+   			$scope.$digest();
+   		}
+   		if(right.indexOf(key) !== -1){
+   			if(playerObj.activeTile === 0){
+   				playerObj.activeTile = playerObj.board.length-1;
+   			} else {
+   				playerObj.activeTile-=1;
+   			}
+   			$scope.$digest();
+   		}
+	};
 
 });
