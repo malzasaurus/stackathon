@@ -1,32 +1,34 @@
 <section id="home">
-	 <div id='startBackground'>
-		 <div>
-		 	<h1>Choose Level</h1> 
-		 </div>
-		 <div>	
-			<select name="level" ng-model='feedback.level'>
-			  	<option value="4">4 Bits</option> 
-			  	<option value="8">8 Bits</option> 
-			  	<option value="16">16 Bits</option> 
-			  	<option value="32">32 Bits</option> 
-			  	<option value="64">64 Bits</option> 
-			</select>
+	<form id="game-input" name="gameInput">
+		 <div id='startBackground'>
+			 <div>
+			 	<h2>Choose Level</h2> 
+			 </div>
+			 <div>	
+				<select name="level" ng-model='feedback.level' class='form-control' required>
+				  	<option value="4">4 Bits</option> 
+				  	<option value="8">8 Bits</option> 
+				  	<option value="16">16 Bits</option> 
+				  	<option value="32">32 Bits</option> 
+				  	<option value="64">64 Bits</option> 
+				</select>
+			</div>
+			<div>
+			 	<h2>Choose Number of Players</h2>
+			 </div>
+			 <div>	
+				<select name="playerNum" ng-model='feedback.playerCount' class='form-control' required>
+				  	<option value="1">1 Player</option> 
+				  	<option value="2">2 Players</option> 
+				  	<option value="3">3 Players</option> 
+				  	<option value="4">4 Players</option> 
+				</select>
+			</div>
+			<div>
+				<button class="btn play-button" ng-disabled='gameInput.$invalid' ui-sref='board({bitChoice: feedback.level, playerNum: feedback.playerCount})'>Start Game!</button>
+			 </div>
 		</div>
-		<div>
-		 	<h1>Choose Number of Players</h1>
-		 </div>
-		 <div>	
-			<select name="playerNum" ng-model='feedback.playerCount'>
-			  	<option value="1">1 Player</option> 
-			  	<option value="2">2 Players</option> 
-			  	<option value="3">3 Players</option> 
-			  	<option value="4">4 Players</option> 
-			</select>
-		</div>
-		<div>
-			<button class="btn play-button" ng-click='startGame()'>Play!</button>
-		 </div>
-	</div>
+	</form>
 </section>
 
 <!-- Make the level and player choices sliders? -->

@@ -1,7 +1,7 @@
 <section id="board">
 	<div id='allboards'>
     	<h1 class='totals'>Target Number: {{targetNum | number}}</h1>
-    	<h3 ng-show='message'>{{message}}</h3>
+    	<h3>{{message}}</h3>
     	<div class='indBoard' ng-repeat='player in players'>
     			<tiles board='board'></tiles>  
     	</div>

@@ -7,7 +7,10 @@ app.config(function ($stateProvider) {
         	players: function($stateParams){ //creates an array for the players to be used in ng-repeat
         		 //creates the board object with individual tile info
                 var tileCount =  Math.log2($stateParams.bitChoice)+1; 
-
+                var keyArray = [['1','2','3'], 
+                                ['0','-','='], 
+                                ['z','x','c'], 
+                                [',','.','/']];
                 var playersArray = [];
         		for (var x = 0; x < $stateParams.playerNum; x++) {
                     var board = [];
@@ -16,7 +19,13 @@ app.config(function ($stateProvider) {
                         board.push({index: i, bit: bit, position: 0});
                     }
 
-                    playersArray[x] = {playerID: x+1, currentTot: 0, activeTile: tileCount-1, board: board};
+                    playersArray[x] = { playerID: x+1, 
+                                        currentTot: 0, 
+                                        activeTile: tileCount-1,
+                                        leftKey: keyArray[x][0],
+                                        toggleKey:keyArray[x][1],
+                                        rightKey:keyArray[x][2], 
+                                        board: board};
         		}
         		return playersArray;
         	},

@@ -1,11 +1,5 @@
 #home {
-
-  // fullstack-logo {
-  //   padding-top: 30px;
-  //   width: 150px;
-  //   margin: 0 auto;
-  // }
-  h1 {
+  h2 {
     margin-top: 40px;
     text-align: center;
   }
@@ -13,41 +7,19 @@
 
     text-align: center;
   }
- //  table {
- //  	width: 500px;
- //  	margin: auto;
- //  }
- //  .background {
-	// // background-color: rgba(249, 242, 236, .75);
-	// background-color: #ECF8F7;
-	// opacity: .75;
-	// border-radius: .25em;
-	// margin: auto;
-	// height: auto;
-	// width: 700px;
-	// text-align: center;
-	// padding: 15px;
-	// border: 2px solid #051A32;
- //  }
- //  .tiles {
- //  	height: 120px;
- //  	border: black solid 2px;
- //  	// background-color: #EC408A;
- //  	// background-color: #FE6029; //bright orange
- //  	background-color: #FCCF00;
- //  	margin: 10%;
- //  	text-align: center;
- //  	font-size: 30px;
- //  	color: white;
- //  	padding: 35px 0;
- //  	border-radius: .25em;
- //  }
+
   .play-button {
   	padding: 2px;
   	border-radius: .25em;
   	background-color: #FE6029; //bright orange
-  	width: 80px;
+  	width: 200px;
   	border: 2px solid black;
+    font-size: 24px;
+    color: white;
+  }
+  .form-control {
+    width: 100px;
+    margin: auto;
   }
   #startBackground {
     margin: auto;
@@ -55,15 +27,13 @@
     padding: 10px;
     text-align: center;
     background-color: #ECF8F7;
-	opacity: .75;
-	border-radius: .25em;
+    opacity: .75;
+    border-radius: .25em;
+    border: 2px solid rgba(0,0,0,.5)
   }
   div {
   	padding: 10px;
   }
- //  .totals {
- //  	float:left;
- //  	margin-right: 20px;
- //  }
+
 }
 

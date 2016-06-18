@@ -2,11 +2,17 @@ app.controller('BoardCtrl', function($window, $scope, $stateParams, players, ran
 
 	$scope.players = players; //created in the state resolve function
 	$scope.targetNum = randomNum; //determined in the state resolve function
-	$scope.message;
+	$scope.message = "";
 	$scope.currentTile = function(player, tile){
-	
 		return player.activeTile === tile.index;
 	};
+
+   $scope.currentPosition = function(tile){
+      return tile.position ===1;
+   };
+   $scope.currentWinner = function(player){
+      return player.currentTot ===$scope.targetNum;
+   };
 
 	$scope.toggle = function(player, tile){
 		if(tile.position===0){
@@ -21,17 +27,13 @@ app.controller('BoardCtrl', function($window, $scope, $stateParams, players, ran
 		}
 	};
 	$window.onkeydown = function(event) {
-    	// Player 1: 1	2	3
-   		// Player 2: 0	-	=
-   		// Player 3: z	x 	c
-   		// Player 4: ,	.	/
    		var key = event.keyCode;
    		var playerKeys = [
-   							[49,50,51],		//player 1
-							[48,189,187],	//player 2
-   							[90,88,67],		//player 3
-   							[188,190,191]	//player 4
-   						];
+   							  [49,50,51],		//player 1
+							     [48,189,187],	//player 2
+   							  [90,88,67],		//player 3
+   							  [188,190,191]	//player 4
+   						   ];
 
    		var left = [49,48,90,188];
    		var flip = [50,189,88,190];

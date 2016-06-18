@@ -4,17 +4,25 @@
 <!--             <fullstack-logo></fullstack-logo> -->
         </div>
         <ul class="nav navbar-nav">
-            <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
-                <a ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
+            <li >
+                <a ui-sref-active="active" ui-sref="home">Home</a>
+            </li>
+            <li >
+                <a ui-sref-active="active" ng-click='newGame()'>Play Again</a>
             </li>
         </ul>
+
+    </div>
+</nav>
+
+
+
+
 <!--         <button ng-show="!user" ui-sref="login" class="btn login-button">Login</button>
 
         <div ng-show="user" class="welcome">
             <span>Welcome, {{ user.email }}!</span>
             <a ng-click="logout()">Logout</a>
         </div> -->
-        <button class="btn navbar-button">Reset</button>
-        <button class="btn navbar-button">New Game</button>
-    </div>
-</nav>
+<!--         <button class="btn navbar-button">Reset</button>
+        <button class="btn navbar-button">New Game</button> -->

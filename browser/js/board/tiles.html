@@ -1,17 +1,26 @@
-<div class='background'>
-	<div>
-		<h3>Player {{player.playerID}}</h3>
-		<h3 class='totals'>Current Total: {{player.currentTot}}</h3>
+<div class='background' ng-class= '{winner: currentWinner(player)}'>
+	<div >
+		<h3 >Player {{player.playerID}}</h3>
 	</div>
 	<table>
 		<tr>
 			<td ng-repeat='card in player.board'>
+				<div class='tiles' ng-class='{active: currentTile(player, card), on: currentPosition(card)}'>{{card.position}}</div>
 				<h6>{{card.bit}} bits</h6>
-				<div class='tiles' ng-class='{active: currentTile(player, card)}'>{{card.position}}</div>
 			</td>
 		</tr>
 	</table>
-	<h4>Left: 1      Toggle: 2      Right: 3</h4>
+	<div>
+			<h3 class='totals heading'>Current Total: {{player.currentTot}}</h3>		
+
+		<ul class='directions heading'>
+			<li>Left: {{player.leftKey}}</li>
+			<li>Toggle: {{player.toggleKey}}</li>
+			<li>Right: {{player.rightKey}}</li>
+		</ul>
+	</div>
+
+<!-- 	<h4>Left: {{player.leftKey}}      Toggle: {{player.toggleKey}}      Right: {{player.rightKey}}</h4> -->
 </div>
 
 <!-- update directions on each board -->
