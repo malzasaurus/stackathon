@@ -1,10 +1,11 @@
 <div class='background' ng-class= '{winner: currentWinner(player)}'>
 	<table>
-		<tr><td><h3>Player {{player.playerID}} Total: {{player.currentTot}}</h3></td></tr>
+		<tr><td><h3>Player {{player.playerID}} Total: {{player.currentTot | number}}</h3></td></tr>
 		<tr class='boardRow'>
 			<td ng-repeat='card in player.board'>
+				<h6>{{card.index + 1| number}} bits</h6>
 				<div class='tiles' ng-class='{active: currentTile(player, card), on: currentPosition(card)}'>{{card.position}}</div>
-				<h6>{{card.bit}} bits</h6>
+				<h6>Value: {{card.bit | number}}</h6>
 			</td>
 		</tr>
 		<tr class='directions'>

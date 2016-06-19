@@ -1,7 +1,7 @@
 <section id="home">
 	<form id="game-input" name="gameInput">
 		 <div id='startBackground'>
-			 <div>
+<!-- 			 <div>
 			 	<h2>Choose Level</h2> 
 			 </div>
 			 <div>	
@@ -12,7 +12,7 @@
 				  	<option value="32">32 Bits</option> 
 				  	<option value="64">64 Bits</option> 
 				</select>
-			</div>
+			</div> -->
 			<div>
 			 	<h2>Choose Number of Players</h2>
 			 </div>
@@ -25,7 +25,7 @@
 				</select>
 			</div>
 			<div>
-				<button class="btn play-button" ng-disabled='gameInput.$invalid' ui-sref='board({bitChoice: feedback.level, playerNum: feedback.playerCount})'>Start Game!</button>
+				<button class="btn play-button" ng-disabled='gameInput.$invalid' ui-sref='board({bitChoice: 4, playerNum: feedback.playerCount})'>Start Game!</button>
 			 </div>
 		</div>
 	</form>

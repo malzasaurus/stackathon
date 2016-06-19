@@ -2,7 +2,7 @@ app.controller('BoardCtrl', function($window, $scope, $stateParams, players, ran
 
 	$scope.players = players; //created in the state resolve function
 	$scope.targetNum = randomNum; //determined in the state resolve function
-	$scope.message;
+	$scope.message = 'Target Number: '+ $scope.targetNum;
 	$scope.currentTile = function(player, tile){
 		return player.activeTile === tile.index;
 	};
@@ -11,7 +11,13 @@ app.controller('BoardCtrl', function($window, $scope, $stateParams, players, ran
       return tile.position ===1;
    };
    $scope.currentWinner = function(player){
-      return player.currentTot ===$scope.targetNum;
+      if(player.currentTot === $scope.targetNum){
+         $scope.message = 'Player ' + player.playerID + ' won!';
+         return true;
+      } else {
+         return false;
+      }
+      // return player.currentTot === $scope.targetNum;
    };
 
 	$scope.toggle = function(player, tile){
@@ -22,9 +28,6 @@ app.controller('BoardCtrl', function($window, $scope, $stateParams, players, ran
 			player.currentTot -= tile.bit;
 			tile.position=0;
 		}
-		// if(player.currentTot===$scope.targetNum){
-		// 	$scope.message = 'Player '+ player.playerID+' WON!!!';
-		// }
 	};
 	$window.onkeydown = function(event) {
    		var key = event.keyCode;

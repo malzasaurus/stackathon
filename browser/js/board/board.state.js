@@ -6,7 +6,7 @@ app.config(function ($stateProvider) {
         resolve: {
         	players: function($stateParams){ //creates an array for the players to be used in ng-repeat
         		 //creates the board object with individual tile info
-                var tileCount =  Math.log2($stateParams.bitChoice)+1; 
+                var tileCount = +$stateParams.bitChoice;
                 var keyArray = [['1','2','3'], 
                                 ['0','-','='], 
                                 ['z','x','c'], 
@@ -31,7 +31,7 @@ app.config(function ($stateProvider) {
         	},
             randomNum: function($stateParams){
                 //determine range of number based on bits chosen
-                var x = Number($stateParams.bitChoice);
+                var x = Math.pow(2,Number($stateParams.bitChoice)-1);
                 var max = 0;
                 while(x % 1 === 0){ //while x is not a fraction
                     max += x;
