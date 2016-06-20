@@ -12,7 +12,7 @@ app.controller('BoardCtrl', function($window, $scope, $stateParams, players, ran
    };
    $scope.currentWinner = function(player){
       if(player.currentTot === $scope.targetNum){
-         $scope.message = 'Player ' + player.playerID + ' won!';
+         $scope.message = 'Winner: Player ' + player.playerID + '!';
          return true;
       } else {
          return false;
