@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Amatica+SC|Cousine|Source+Code+Pro|Ubuntu+Mono|Source+Code+Pro|Roboto+Mono|VT323" rel="stylesheet">
-    
     <script src="/derpModule/index.js" defer></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="derpModule/js/html2canvas.js"></script>
@@ -27,23 +26,22 @@
 
     <navbar></navbar>
     <!-- changed this line -->
-    <button id="myBtn"><span><img src="/derpModule/logogh.png"></span></button> 
+    <button id="myBtn" data-html2canvas-ignore><span><img src="/derpModule/logogh.png"></span></button>   
+    <div id='loading' data-html2canvas-ignore><img src="/derpModule/spin.svg"></div>
 <div id="myModal" class='modal'>
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">×</span>
             <h2>Report a Bug</h2>
         </div>
-<!--         <div>
-            <span class='close'>x</span>
-            <h2>Report a Bug</h2>
-        </div> -->
+
         <!-- end of header -->
         <div class="modal-body">
         <!-- We'll need to update the server address on line 11 before production -->
-            <form action="http://192.168.1.112:1337/api/bugs" id='bug_form' method="post">
+            <form action="https://gha-capstone-grasshopper.herokuapp.com/api/bugs" id='bug_form' method="post">
                 <h5>Comments:</h5>
-                <input type="textarea" name="formComments">
+                <textarea name='formComments'></textarea>
+                <!-- <input type="text" name="formComments"> -->
                 <input type="hidden" name="cookieEnabled" id="cookieEnabled" value="" readonly="readonly">
                 <input type="hidden" name="doNotTrack" id="doNotTrack" value="" readonly="readonly">
                 <input type="hidden" name="appVersion" id="appVersion" value="" readonly="readonly">
@@ -54,9 +52,9 @@
                 <input type="hidden" name="protocol" id="protocol" value="" readonly="readonly">
                 <input type="hidden" name="browser" id="browser" value="" readonly="readonly">
                 <input type="hidden" name="browserVer" id="browserVer" value="" readonly="readonly">
-                <input type="hidden" name="appId" id="appId" value="ffd7f491-b9ab-4e7e-bd2f-727c295d2ad8" readonly="readonly">
+                <input type="hidden" name="appId" id="appId" value="e6fcc51a-e280-4bf9-99f8-2de9cd451a52" readonly="readonly">
                 <input type="hidden" name="img_val" id="img_val" value="" />
-                <button>Submit</button>
+                <button id='formSubmit'>Submit</button>
             </form>
         </div>
     </div>
